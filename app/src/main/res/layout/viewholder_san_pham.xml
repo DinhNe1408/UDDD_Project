@@ -5,43 +5,46 @@
     android:id="@+id/mainlayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="10dp"
+    android:layout_margin="5dp"
     app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <ImageView
             android:id="@+id/imgV_Hinhsp"
             android:layout_width="0dp"
             android:layout_height="120dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/sp1" />
+            tools:srcCompat="@tools:sample/avatars[0]" />
 
         <TextView
             android:id="@+id/txtV_Tensp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="middle"
+            android:maxLines="2"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgV_Hinhsp" />
 
         <TextView
-            android:id="@+id/txtV_GiaGocsp"
+            android:id="@+id/txtV_GiaGoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
             android:text="12.000"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,33 +54,14 @@
             android:id="@+id/txtV_Giasp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
             android:text="12.000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtV_GiaGocsp" />
+            app:layout_constraintTop_toBottomOf="@id/txtV_GiaGoc" />
 
-        <ImageButton
-            android:layout_marginTop="10sp"
-            android:id="@+id/button2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:textColor="#770000"
-            app:icon="@drawable/ic_add_black_48dp"
-            app:iconGravity="textStart"
-            app:iconPadding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgV_Hinhsp"
-            app:layout_constraintEnd_toEndOf="@id/imgV_Hinhsp"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toStartOf="@+id/imgV_Hinhsp"
-            app:layout_constraintTop_toTopOf="@+id/imgV_Hinhsp"
-            app:layout_constraintVertical_bias="0.956"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-            tools:src="@drawable/ic_add_black_48dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

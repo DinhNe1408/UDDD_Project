@@ -3,82 +3,84 @@ package com.example.uddd_project;
 import java.io.Serializable;
 
 public class SPGioHangDomain implements Serializable {
-    String Tensp,Masp;
+    String TenSP;
+    int IDSP, SLMSP, GiaSP, GiaGoc, TongTien, SLSP;
+    byte[] HinhSP;
 
-    int Solsp,Giamgia,Hinhsp;
-    Double GiaGoc, Gia;
+    public SPGioHangDomain() { }
 
-    public SPGioHangDomain(String masp, String tensp, int hinhsp, int solsp, int giamgia, Double giaGoc, Double gia) {
-        Tensp = tensp;
-        Hinhsp = hinhsp;
-        Masp = masp;
-        Solsp = solsp;
-        Giamgia = giamgia;
-        GiaGoc = giaGoc;
-        Gia = gia;
+    public SPGioHangDomain(int IDSP, String tenSP, byte[] hinhSP,int giaSP, int SLSP, int giaGoc, int SLMSP, int tongTien) {
+        this.TenSP = tenSP;
+        this.IDSP = IDSP;
+        this.SLMSP = SLMSP;
+        this.GiaSP = giaSP;
+        this.GiaGoc = giaGoc;
+        this.TongTien = tongTien;
+        this.SLSP = SLSP;
+        this.HinhSP = hinhSP;
     }
 
-    public SPGioHangDomain(String masp, String tensp, int hinhsp , int solsp, Double gia) {
-        Tensp = tensp;
-        Hinhsp = hinhsp;
-        Masp = masp;
-        Solsp = solsp;
-        Gia = gia;
+    public String getTenSP() {
+        return TenSP;
     }
 
-    public String getTensp() {
-        return Tensp;
+    public void setTenSP(String tenSP) {
+        TenSP = tenSP;
     }
 
-    public void setTensp(String tensp) {
-        Tensp = tensp;
+    public int getIDSP() {
+        return IDSP;
     }
 
-    public int getHinhsp() {
-        return Hinhsp;
+    public void setIDSP(int IDSP) {
+        this.IDSP = IDSP;
     }
 
-    public void setHinhsp(int hinhsp) {
-        Hinhsp = hinhsp;
+    public int getSLMSP() {
+        return SLMSP;
     }
 
-    public String getMasp() {
-        return Masp;
+    public void setSLMSP(int SLMSP) {
+        this.SLMSP = SLMSP;
     }
 
-    public void setMasp(String masp) {
-        Masp = masp;
+    public int getGiaSP() {
+        return GiaSP;
     }
 
-    public int getSolsp() {
-        return Solsp;
+    public void setGiaSP(int giaSP) {
+        GiaSP = giaSP;
     }
 
-    public void setSolsp(int solsp) {
-        Solsp = solsp;
-    }
-
-    public int getGiamgia() {
-        return Giamgia;
-    }
-
-    public void setGiamgia(int giamgia) {
-        Giamgia = giamgia;
-    }
-
-    public Double getGiaGoc() {
+    public int getGiaGoc() {
         return GiaGoc;
     }
 
-    public void setGiaGoc(Double giaGoc) {
+    public void setGiaGoc(int giaGoc) {
         GiaGoc = giaGoc;
     }
 
-    public Double getGia() {
-        return Gia;
+    public int getTongTien() {
+        return TongTien;
     }
 
-    public void setGia(Double gia) {
-        Gia = gia;
+    public void setTongTien(int tongTien) {
+        TongTien = tongTien;
+    }
+
+    public int getSLSP() {
+        return SLSP;
+    }
+
+    public void setSLSP(int SLSP) {
+        this.SLSP = SLSP;
+    }
+
+    public byte[] getHinhSP() {
+        return HinhSP;
+    }
+
+    public void setHinhSP(byte[] hinhSP) {
+        HinhSP = hinhSP;
     }
 }

@@ -6,29 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".Activity.ChiTietSanPham">
 
-    <ImageView
-        android:id="@+id/imgV_Hinhsanpham_Ctsp"
+    <RelativeLayout
+        android:id="@+id/frameL_Ctsp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fruits" />
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imgV_HinhSP_Ctsp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:padding="10dp"
+            tools:srcCompat="@tools:sample/avatars[0]" />
+
+        <ImageView
+            android:id="@+id/imgV_QuayLai_Ctsp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_arrow_back_black_48dp"
+            android:backgroundTint="@color/black"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:srcCompat="@drawable/ic_arrow_back_black_48dp" />
+
+        <ImageView
+            android:id="@+id/imgV_Thich_Ctsp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/ic_favorite_border_black_48dp"
+            android:backgroundTint="@color/black"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
 
     <TextView
-        android:id="@+id/txtV_Tensanpham_Ctsp"
+        android:id="@+id/txtV_TenSP_Ctsp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="false"
-
         android:text="Tên sản phẩm"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtV_GiaSP_Ctsp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgV_Hinhsanpham_Ctsp" />
+        app:layout_constraintTop_toBottomOf="@+id/frameL_Ctsp" />
+
+    <TextView
+        android:id="@+id/txtV_GiaGocSP_Ctsp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtV_TenSP_Ctsp" />
+
+    <TextView
+        android:id="@+id/txtV_GiaSP_Ctsp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtV_GiaGocSP_Ctsp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,59 +102,60 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/btn_Tangsanpham_Ctsp"
+            android:id="@+id/btn_TangSP_Ctsp"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/ic_add_black_48dp"
             android:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_Giamsanpham_Ctsp"
+            app:layout_constraintStart_toEndOf="@+id/btn_GiamSP_Ctsp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.64"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btn_Giamsanpham_Ctsp"
+            android:id="@+id/btn_GiamSP_Ctsp"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="24dp"
             android:background="@drawable/ic_remove_black_48dp"
             android:backgroundTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_Tangsanpham_Ctsp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_TangSP_Ctsp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.64"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/editTextNumber"
+            android:id="@+id/txtV_SLMSP_Ctsp"
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
+            android:gravity="center"
+            android:text="1"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GiamSP_Ctsp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_ThemGH_Ctsp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="36dp"
+            android:background="@drawable/background_botron"
+            android:paddingVertical="5dp"
             android:text="Thêm vào giỏ"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toEndOf="@+id/btn_Tangsanpham_Ctsp"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintStart_toEndOf="@+id/btn_TangSP_Ctsp"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_TongTien_Ctsp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txtV_TongTien_Ctsp"
             android:layout_width="150dp"
             android:layout_height="23dp"
             android:layout_marginTop="28dp"
@@ -97,18 +163,36 @@
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.686"
-            app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+            app:layout_constraintStart_toEndOf="@+id/txtV_SLMSP_Ctsp"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView6"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtV_Tensanpham_Ctsp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtV_GiaSP_Ctsp"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtV_NoiDung_ctsp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

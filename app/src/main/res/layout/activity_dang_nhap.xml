@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DangNhap"
-    android:background="@color/teal_200">
+    android:background="@color/mau5"
+    tools:context=".Activity.DangNhap">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="150dp"
@@ -43,4 +44,16 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/disu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

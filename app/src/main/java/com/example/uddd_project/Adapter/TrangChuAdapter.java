@@ -1,24 +1,29 @@
 package com.example.uddd_project.Adapter;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+
 
 import com.example.uddd_project.Fragment.DanhMucTab;
 import com.example.uddd_project.Fragment.GioHangTab;
 import com.example.uddd_project.Fragment.TaiKhoanTab;
 import com.example.uddd_project.Fragment.TrangChuTab;
 
-public class TrangChuAdapter extends FragmentStatePagerAdapter {
+public class TrangChuAdapter extends FragmentStateAdapter {
 
-    public TrangChuAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+
+    public TrangChuAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         switch (position){
             case 0:
                 return new TrangChuTab();
@@ -34,7 +39,7 @@ public class TrangChuAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return 4;
     }
 }

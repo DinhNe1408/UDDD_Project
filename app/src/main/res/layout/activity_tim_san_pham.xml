@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.TimSanPham">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool3_TimSanPham_tsp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mau3"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+
+        tools:ignore="MissingConstraints"/>
+    <!--app:menu="@menu/menu_trang_chu"-->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/consL_TimKiem"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:backgroundTint="@color/mau5"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editT_Tiemkiem_tsp"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginHorizontal="30dp"-->
+<!--            android:background="@drawable/background_timkiem"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:drawableLeft="?android:attr/actionModeWebSearchDrawable"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Tìm kiếm"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="TouchTargetSizeCheck" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consL_Loc"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/ic_launcher_round_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool3_TimSanPham_tsp" >
+
+        <Spinner
+            android:id="@+id/spin_DanhMuc_tk"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recV_TimKiem_tk"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consL_Loc">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

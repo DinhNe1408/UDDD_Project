@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FFFF0000</color>
     <color name="orange">#FF5722</color>
+
+    <color name="mau1">#FFF8CD</color>
+    <color name="mau2">#FFE05D</color>
+    <color name="mau3">#FF9642</color>
+    <color name="mau4">#646464</color>
+    <color name="mau5">#EEFFAA66</color>
 </resources>

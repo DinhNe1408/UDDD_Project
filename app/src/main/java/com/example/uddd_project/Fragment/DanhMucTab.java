@@ -1,26 +1,33 @@
 package com.example.uddd_project.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.uddd_project.Activity.TrangChu;
 import com.example.uddd_project.Adapter.DanhMucAdapter;
-import com.example.uddd_project.DanhMucDomain;
+import com.example.uddd_project.DAO_DTO.DAO;
 import com.example.uddd_project.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DanhMucTab extends Fragment {
     private RecyclerView recV_Danhmuc_Dm;
+    DAO dao;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
+    @NonNull
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle saveInstanceState){
         View view = inflater.inflate(R.layout.tab_danh_muc, container, false);
+
+        dao = new DAO(getContext());
 
         recV_Danhmuc_Dm = view.findViewById(R.id.recV_Danhmuc_Dm);
         recV_Danhmuc_Dm();
@@ -31,18 +38,8 @@ public class DanhMucTab extends Fragment {
     private void recV_Danhmuc_Dm() {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
         recV_Danhmuc_Dm.setLayoutManager(gridLayoutManager);
-        DanhMucAdapter danhMucAdapter = new DanhMucAdapter(getListDanhMuc());
-        recV_Danhmuc_Dm.setAdapter(danhMucAdapter);
-    }
 
-    private List<DanhMucDomain> getListDanhMuc() {
-        List < DanhMucDomain> DSDanhmuc = new ArrayList<>();
-        DSDanhmuc.add(new DanhMucDomain("DM1","Rau Củ Tươi",R.drawable.vegetable));
-        DSDanhmuc.add(new DanhMucDomain("DM2","Trái Cây Tươi",R.drawable.fruits));
-        DSDanhmuc.add(new DanhMucDomain("DM3","Cà phê",R.drawable.coffeecup));
-        DSDanhmuc.add(new DanhMucDomain("DM4","Đồ hộp",R.drawable.canned_food));
-        DSDanhmuc.add(new DanhMucDomain("DM5","Trứng và sữa",R.drawable.food));
-        DSDanhmuc.add(new DanhMucDomain("DM6","Nước giải khát",R.drawable.softdrink));
-        return DSDanhmuc;
+        DanhMucAdapter danhMucAdapter = new DanhMucAdapter(getContext(),dao.LayDanhMuc());
+        recV_Danhmuc_Dm.setAdapter(danhMucAdapter);
     }
 }

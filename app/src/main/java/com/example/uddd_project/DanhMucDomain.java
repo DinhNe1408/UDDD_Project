@@ -3,36 +3,42 @@ package com.example.uddd_project;
 import java.io.Serializable;
 
 public class DanhMucDomain implements Serializable {
-    private String madm,tendm;
-    private int hinh;
+    private int IDDM;
+    private String TenDM;
+    private byte[] HinhDM;
 
-    public DanhMucDomain(String madm, String tendm, int hinh) {
-        this.madm = madm;
-        this.tendm = tendm;
-        this.hinh = hinh;
+    public DanhMucDomain(int IDDM, String tenDM) {
+        this.IDDM = IDDM;
+        TenDM = tenDM;
     }
 
-    public String getMadm() {
-        return madm;
+    public DanhMucDomain(int IDDM, String tenDM, byte[] hinhDM) {
+        this.IDDM = IDDM;
+        TenDM = tenDM;
+        HinhDM = hinhDM;
     }
 
-    public void setMadm(String madm) {
-        this.madm = madm;
+    public int getIDDM() {
+        return IDDM;
     }
 
-    public String getTendm() {
-        return tendm;
+    public void setIDDM(int IDDM) {
+        this.IDDM = IDDM;
     }
 
-    public void setTendm(String tendm) {
-        this.tendm = tendm;
+    public String getTenDM() {
+        return TenDM;
     }
 
-    public int getHinh() {
-        return hinh;
+    public void setTenDM(String tenDM) {
+        TenDM = tenDM;
     }
 
-    public void setHinh(int hinh) {
-        this.hinh = hinh;
+    public byte[] getHinhDM() {
+        return HinhDM;
+    }
+
+    public void setHinhDM(byte[] hinhDM) {
+        HinhDM = hinhDM;
     }
 }

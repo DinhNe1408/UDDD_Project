@@ -5,112 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool3_TrangChuTab"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        android:backgroundTint="#00BCD4"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/mau3"
+        app:menu="@menu/menu_trang_chu"
+        tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="42dp"
-            android:layout_height="36dp"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_notifications_black_48dp" />
+    </androidx.appcompat.widget.Toolbar>
 
-        <EditText
-            android:id="@+id/editT_Tiemkiem"
-            android:layout_width="0dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/background_timkiem"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="?android:attr/actionModeWebSearchDrawable"
-            android:ems="10"
-            android:hint="Tìm kiếm"
-            android:inputType="textPersonName"
-            android:paddingLeft="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/consL_TimKiem"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:backgroundTint="@color/mau5"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView2"-->
+<!--            android:layout_width="42dp"-->
+<!--            android:layout_height="36dp"-->
+<!--            android:layout_marginEnd="24dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@drawable/ic_notifications_black_48dp" />-->
 
-    <ScrollView
+<!--        <EditText-->
+<!--            android:id="@+id/editT_Tiemkiem_tsp"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:background="@drawable/background_timkiem"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:drawableLeft="?android:attr/actionModeWebSearchDrawable"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Tìm kiếm"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/imageView2"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="TouchTargetSizeCheck" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool3_TrangChuTab"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_BanChay_tc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="@string/banchay"
+            tools:ignore="MissingConstraints"/>
+
+        <Button
+            android:id="@+id/btn_KhuyenMai_tc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="@string/khuyenmai"
+            tools:ignore="MissingConstraints"/>
+
+        <Button
+            android:id="@+id/btn_Raucutuoi_tc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Rau củ tươi"
+            tools:ignore="MissingConstraints"/>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        tools:ignore="SpeakableTextPresentCheck">
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        tools:ignore="MissingConstraints">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recV_TongDS_tc"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="Bán chạy"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/recV_Banchay_Tc"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recV_Banchay_Tc"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Khuyến mãi"
-                android:textSize="16sp"
-                android:layout_marginVertical="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recV_Banchay_Tc" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recV_Khuyenmai_Tc"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

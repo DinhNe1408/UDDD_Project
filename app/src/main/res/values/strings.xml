@@ -6,12 +6,23 @@
     <string name="danhmuc">Danh mục</string>
     <string name="taikhoan">Tài khoản</string>
 
+    <string name="timkiem">Tìm kiếm</string>
+    <string name="xacnhan">Xác nhận</string>
+    <string name="banchay">Bán chạy</string>
+    <string name="khuyenmai">Khuyến mãi</string>
+
+    <string name="qlhoadon">Quản lý hóa đơn</string>
+    <string name="qltaikhoan">Quản lý tài khoản</string>
+    <string name="qlsanpham">Quản lý sản phẩm</string>
 
     <string name="dangnhap">Đăng nhập</string>
     <string name="dangky">Đăng ký</string>
     <string name="matkhau">Mật khẩu</string>
     <string name="sdt">Số điện thoại</string>
     <string name="gmail">Gmail</string>
+    <string name="hoten">Họ và tên</string>
+    <string name="xemthem">Xem thêm</string>
+    <string name="thongbao">Thông báo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

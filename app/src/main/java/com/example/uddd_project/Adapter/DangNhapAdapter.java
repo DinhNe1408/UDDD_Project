@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.uddd_project.Fragment.DangKyTab;
 import com.example.uddd_project.Fragment.DangNhapTab;
+import com.example.uddd_project.TaiKhoanDomain;
 
 public class DangNhapAdapter extends FragmentStatePagerAdapter {
 
