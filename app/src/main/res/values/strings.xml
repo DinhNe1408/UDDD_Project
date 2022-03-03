@@ -1,6 +1,6 @@
 <resources>
     <!-- Chính -->
-    <string name="app_name">UDDD_Project</string>
+    <string name="app_name">DISUP</string>
     <string name="trangchu">Trang chủ</string>
     <string name="giohang">Giỏ hàng</string>
     <string name="danhmuc">Danh mục</string>
@@ -10,10 +10,11 @@
     <string name="xacnhan">Xác nhận</string>
     <string name="banchay">Bán chạy</string>
     <string name="khuyenmai">Khuyến mãi</string>
-
+    <string name="diachi">Địa chỉ</string>
     <string name="qlhoadon">Quản lý hóa đơn</string>
     <string name="qltaikhoan">Quản lý tài khoản</string>
     <string name="qlsanpham">Quản lý sản phẩm</string>
+    <string name="huy">Hủy</string>
 
     <string name="dangnhap">Đăng nhập</string>
     <string name="dangky">Đăng ký</string>

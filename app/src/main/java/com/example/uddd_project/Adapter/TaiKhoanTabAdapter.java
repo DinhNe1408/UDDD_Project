@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uddd_project.Activity.DangNhap;
 import com.example.uddd_project.Activity.DoiMatKhau;
-import com.example.uddd_project.Activity.QLHoaDon;
+import com.example.uddd_project.Activity.LichSuMuaHang;
 import com.example.uddd_project.Activity.QLSanPham;
 import com.example.uddd_project.Activity.QLTaiKhoan;
 import com.example.uddd_project.Activity.ThongTinCaNhan;
@@ -80,13 +80,9 @@ public class TaiKhoanTabAdapter extends RecyclerView.Adapter<TaiKhoanTabAdapter.
                 holder.txtV_taikhoantab.setText("Quản lý sản phẩm");
                 holder.imgV_taikhoantab.setImageResource(R.drawable.ic_description_black_48dp);
                 break;
-            case TrangChu.KEY_QLHOADON:
-                holder.txtV_taikhoantab.setText("Quản lý hóa đơn");
-                holder.imgV_taikhoantab.setImageResource(R.drawable.ic_inventory_black_48dp);
-                break;
             case TrangChu.KEY_THONGTINCANHAN:
                 holder.txtV_taikhoantab.setText("Thông tin cá nhân");
-                holder.imgV_taikhoantab.setImageResource(R.drawable.ic_inventory_black_48dp);
+                holder.imgV_taikhoantab.setImageResource(R.drawable.ic_person_black_48dp);
                 break;
         }
         
@@ -97,7 +93,8 @@ public class TaiKhoanTabAdapter extends RecyclerView.Adapter<TaiKhoanTabAdapter.
                 
                 switch (key){
                     case TrangChu.KEY_LSMH :
-                        Toast.makeText(context, "Lịch sử mua hàng", Toast.LENGTH_SHORT).show();
+                        if(TrangChu.taikhoan.getIDTK() != -1){ context.startActivity(new Intent(context, LichSuMuaHang.class)); }
+                        else { ThongBao(); }
                         break;
                     case TrangChu.KEY_YEUTHICH:
                         if(TrangChu.taikhoan.getIDTK() != - 1){ context.startActivity(new Intent(context, YeuThich.class)); }
@@ -126,9 +123,6 @@ public class TaiKhoanTabAdapter extends RecyclerView.Adapter<TaiKhoanTabAdapter.
                         break;
                     case TrangChu.KEY_QLSANPHAM:
                         context.startActivity(new Intent(context, QLSanPham.class));
-                        break;
-                    case TrangChu.KEY_QLHOADON:
-                        context.startActivity(new Intent(context, QLHoaDon.class));
                         break;
                     case TrangChu.KEY_THONGTINCANHAN:
                         if(TrangChu.taikhoan.getIDTK() != -1){ context.startActivity(new Intent(context, ThongTinCaNhan.class)); }

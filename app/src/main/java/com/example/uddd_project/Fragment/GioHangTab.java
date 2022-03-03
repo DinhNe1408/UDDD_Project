@@ -91,7 +91,6 @@ public class GioHangTab extends Fragment {
         btn_ThanhToan_Gh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showdialog();
                 Intent intent = new Intent(getContext(), DonHang.class);
                 startActivity(intent);
             }
@@ -131,27 +130,7 @@ public class GioHangTab extends Fragment {
             }
         }
     }
-    private void showdialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        LayoutInflater inflater = getLayoutInflater();
-        View view = inflater.inflate(R.layout.don_hang,null);
-        final EditText editT_HoTen_dh = view.findViewById(R.id.editT_HoTen_dh);
-        final EditText editT_SDT_dh = view.findViewById(R.id.editT_SDT_dh);
-        final EditText editT_DiaChi_dh = view.findViewById(R.id.editT_DiaChi_dh);
-
-        builder.setView(view);
-        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                int idhd = dao.LayIDHD();
-                if (idhd == -1){
-
-                }
-            }
-        }).setNegativeButton("Hủy", null);
-        builder.show();
-    }
     
     private int TongTien(List<SanPhamDomain> sanPhamDomain){
         int Tong = 0;

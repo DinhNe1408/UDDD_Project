@@ -47,20 +47,6 @@ public class TieuDeTCApdapter extends RecyclerView.Adapter<TieuDeTCApdapter.tieu
         holder.txtV_TieuDe_tc.setText(tieuDe);
         holder.recV_DSSP_tc.setLayoutManager(gridLayoutManager);
         holder.recV_DSSP_tc.setAdapter(sanPhamAdapter);
-
-        holder.txtV_XemThem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (tieuDe.equals("Rau củ tươi")){
-                    Intent intent = new Intent(context, TimSanPham.class);
-                    intent.putExtra("idDM",2);
-                    context.startActivity(intent);
-                }
-                else {
-                    Toast.makeText(context, "Chức năng này từ từ nha",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     @Override
@@ -73,14 +59,13 @@ public class TieuDeTCApdapter extends RecyclerView.Adapter<TieuDeTCApdapter.tieu
 
     public class tieuDeTCholder extends RecyclerView.ViewHolder{
 
-        private TextView txtV_TieuDe_tc, txtV_XemThem;
+        private TextView txtV_TieuDe_tc;
         private RecyclerView recV_DSSP_tc;
         public tieuDeTCholder(@NonNull View itemView) {
             super(itemView);
 
             txtV_TieuDe_tc = itemView.findViewById(R.id.txtV_TieuDe_tc);
             recV_DSSP_tc = itemView.findViewById(R.id.recV_DSSP_tc);
-            txtV_XemThem = itemView.findViewById(R.id.txtV_XemThem);
         }
     }
 }

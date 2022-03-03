@@ -65,7 +65,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.viewH_Gi
         holder.txtV_TenSP_Gh.setText(spGioHang.getTenSP());
         holder.txtV_SLMSP_Gh.setText(String.valueOf(spGioHang.getSLMSP()));
         holder.txtV_GiaSP_Gh.setText(gia);
-
+        holder.txtV_ThanhTien_gh.setText(decimalFormat.format(spGioHang.getGiaSP() * spGioHang.getSLMSP()));
         holder.cardV_GioHang_gh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,7 +123,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.viewH_Gi
         private CardView cardV_GioHang_gh;
         private ImageButton imgB_XoaSPGH_Gh;
         private ImageView imgV_HinhSP_Gh;
-        private TextView txtV_TenSP_Gh, txtV_GiaSP_Gh, txtV_SLMSP_Gh, txtV_TongTien2_Gh;
+        private TextView txtV_TenSP_Gh, txtV_GiaSP_Gh, txtV_SLMSP_Gh, txtV_ThanhTien_gh;
         private DAO dao;
         private int SLMSP = 0;
 
@@ -140,7 +140,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.viewH_Gi
             txtV_GiaSP_Gh = itemView.findViewById(R.id.txtV_GiaSP_Gh);
             txtV_SLMSP_Gh = itemView.findViewById(R.id.txtV_SLMSP_Gh);
             cardV_GioHang_gh = itemView.findViewById(R.id.cardV_GioHang_gh);
-            txtV_TongTien2_Gh = itemView.findViewById(R.id.txtV_TongTien2_Gh);
+            txtV_ThanhTien_gh = itemView.findViewById(R.id.txtV_ThanhTien_gh);
         }
     }
 }

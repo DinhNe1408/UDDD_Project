@@ -39,8 +39,7 @@ public class TrangChu extends AppCompatActivity {
     public static final int KEY_DOIMATKHAU = 5;
     public static final int KEY_QLTAIKHOAN = 6;
     public static final int KEY_QLSANPHAM = 7;
-    public static final int KEY_QLHOADON = 8;
-    public static final int KEY_THONGTINCANHAN = 9;
+    public static final int KEY_THONGTINCANHAN = 8;
 
     private ViewPager2 viewP_Tc;
     BottomNavigationView navigationView;

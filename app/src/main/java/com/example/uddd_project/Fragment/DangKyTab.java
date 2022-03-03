@@ -33,21 +33,27 @@ public class DangKyTab extends Fragment {
                 if (editT_SDT_Dk.getText().length() == 0 || editT_HoTen_Dk.length() == 0 || editT_MatKhau_Dk.length() == 0){
                     Toast.makeText(view.getContext(),"Vui lòng điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
                 }
-                else if (dao.isTK(editT_SDT_Dk.getText().toString())){
-                    dao.TaoTK(editT_SDT_Dk.getText().toString(),
-                            editT_MatKhau_Dk.getText().toString(),
-                            editT_HoTen_Dk.getText().toString());
-                    if(dao.isTK(editT_SDT_Dk.getText().toString())){
-                        Toast.makeText(view.getContext(), "Tạo tài khoản thất bại",Toast.LENGTH_SHORT).show();
+                else if (editT_SDT_Dk.getText().length() == 10){
+                    if (dao.isTK(editT_SDT_Dk.getText().toString())){
+                        dao.TaoTK(editT_SDT_Dk.getText().toString(),
+                                editT_MatKhau_Dk.getText().toString(),
+                                editT_HoTen_Dk.getText().toString(),"","USER");
+
+                        if(dao.isTK(editT_SDT_Dk.getText().toString())){
+                            Toast.makeText(view.getContext(), "Tạo tài khoản thất bại",Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(view.getContext(), "Tạo tài khoản thành công",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(view.getContext(), DangNhap.class);
+                            intent.putExtra("posTab_DN",0);
+                            startActivity(intent);
+                        }
                     }else {
-                        Toast.makeText(view.getContext(), "Tạo tài khoản thành công",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(view.getContext(), DangNhap.class);
-                        intent.putExtra("posTab_DN",0);
-                        startActivity(intent);
+                        Toast.makeText(view.getContext(), "Số điện thoại đã được sử dụng",Toast.LENGTH_SHORT).show();
                     }
-                }else {
-                    Toast.makeText(view.getContext(), "Số điện thoại đã được sử dụng",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(view.getContext(), "Vui lòng điền đúng định đạng số điện thoại", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         return view;

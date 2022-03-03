@@ -12,7 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@color/mau3"
         app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
-
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         tools:ignore="MissingConstraints"/>
     <!--app:menu="@menu/menu_trang_chu"-->
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->

@@ -40,8 +40,6 @@ public class ChiTietSanPham extends AppCompatActivity {
 
         DecimalFormat decimalFormat = new DecimalFormat("###,###,##0 VND");
 
-
-
         btn_GiamSP_Ctsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,8 +66,11 @@ public class ChiTietSanPham extends AppCompatActivity {
                     gia = decimalFormat.format(SLMSP * sanPham.getGiaSP());
                     txtV_TongTien_Ctsp.setText(gia);
                     txtV_SLMSP_Ctsp.setText(String.valueOf(SLMSP));
+                } else if(SLMSP < sanPham.getSLSP()){
+                    Toast.makeText(ChiTietSanPham.this,"Số lượng sản phẩm được mua tối đa là " + String.valueOf(sanPham.getSLMTD()),Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ChiTietSanPham.this,"Số lượng sản phẩm được mua tối đa",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChiTietSanPham.this,"Số lượng sản phẩm được mua tối đa là " + String.valueOf(sanPham.getSLSP()),Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -98,11 +99,14 @@ public class ChiTietSanPham extends AppCompatActivity {
                     if(isThich){
                         dao.XoaThich(TrangChu.taikhoan.getIDTK(),sanPham.getIDSP());
                         imgV_Thich_Ctsp.setImageResource(R.drawable.ic_favorite_border_black_48dp);
+                        Toast.makeText(ChiTietSanPham.this, "Đã gỡ khỏi yêu thích", Toast.LENGTH_SHORT).show();
                     } else {
                         dao.ThemThich(TrangChu.taikhoan.getIDTK(),sanPham.getIDSP());
                         imgV_Thich_Ctsp.setImageResource(R.drawable.ic_favorite_black_48dp);
+                        Toast.makeText(ChiTietSanPham.this, "Đã thêm vào yêu thích", Toast.LENGTH_SHORT).show();
                     }
                     isThich = !isThich;
+                    imgV_Thich_Ctsp.setColorFilter(getResources().getColor(R.color.mau3));
                 } else {
                     DenDangNhap();
                 }
@@ -144,6 +148,7 @@ public class ChiTietSanPham extends AppCompatActivity {
             } else {
                 imgV_Thich_Ctsp.setImageResource(R.drawable.ic_favorite_border_black_48dp);
             }
+            imgV_Thich_Ctsp.setColorFilter(getResources().getColor(R.color.mau3));
         }
 
         if(sanPham.getGiaGocSP() == 0){

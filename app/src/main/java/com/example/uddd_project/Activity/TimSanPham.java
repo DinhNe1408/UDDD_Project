@@ -1,6 +1,8 @@
 package com.example.uddd_project.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,16 +11,13 @@ import android.app.SearchManager;
 import android.content.Context;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.SearchView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.example.uddd_project.Adapter.SanPhamAdapter;
+import android.widget.Spinner;
+
 import com.example.uddd_project.Adapter.SpinDMAdapter;
 import com.example.uddd_project.Adapter.TimKiemAdapter;
 import com.example.uddd_project.DAO_DTO.DAO;
@@ -32,13 +31,15 @@ public class TimSanPham extends AppCompatActivity {
 
     RecyclerView recV_TimKiem_tk;
     Spinner spin_DanhMuc_tk;
+    SpinDMAdapter spinDMAdapter;
     ArrayList<SanPhamDomain> listSP;
     ArrayList<DanhMucDomain> listDM;
-    SpinDMAdapter spinDMAdapter;
+
     DAO dao;
     SearchView menu_timkiem_tc;
     TimKiemAdapter adapter;
     Toolbar tool3_TimSanPham_tsp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,18 @@ public class TimSanPham extends AppCompatActivity {
 
         AnhXa();
         SuKien();
+
+        setSupportActionBar(tool3_TimSanPham_tsp);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
+        tool3_TimSanPham_tsp.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         listDM = new ArrayList<>();
         listDM.add(new DanhMucDomain(-1,"Tất cả"));
         listDM.addAll(dao.LayDanhMuc());
@@ -67,27 +80,26 @@ public class TimSanPham extends AppCompatActivity {
             listSP = dao.ListSP(-1);
         }
 
-
         adapter = new TimKiemAdapter(TimSanPham.this,listSP);
         recV_TimKiem_tk.setAdapter(adapter);
         recV_TimKiem_tk.setLayoutManager(new GridLayoutManager(TimSanPham.this,2));
-
-        // spinDMAdapter.getItem()
-
-
     }
-
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_trang_chu,menu);
 
-//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//        menu_timkiem_tc = (SearchView) menu.findItem(R.id.menu_timkiem_tc).getActionView();
-//        menu_timkiem_tc.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//        menu_timkiem_tc.setMaxWidth(Integer.MAX_VALUE);
-        Toast.makeText(TimSanPham.this, "d", Toast.LENGTH_SHORT).show();
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        menu_timkiem_tc = (SearchView) menu.findItem(R.id.menu_timkiem_tc).getActionView();
+        menu_timkiem_tc.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        menu_timkiem_tc.setMaxWidth(Integer.MAX_VALUE)  ;
+
+        String timkiem = getIntent().getStringExtra("TimKiem");
+        if (timkiem != null){
+            adapter.getFilter().filter(timkiem);
+        }
+
         menu_timkiem_tc.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -136,6 +148,7 @@ public class TimSanPham extends AppCompatActivity {
 
     private void AnhXa() {
         dao = new DAO(TimSanPham.this);
+
         tool3_TimSanPham_tsp = findViewById(R.id.tool3_TimSanPham_tsp);
         recV_TimKiem_tk = findViewById(R.id.recV_TimKiem_tk);
         spin_DanhMuc_tk = findViewById(R.id.spin_DanhMuc_tk);

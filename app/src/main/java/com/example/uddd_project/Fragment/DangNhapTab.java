@@ -42,8 +42,9 @@ public class DangNhapTab extends Fragment {
 
                 if(editT_SDT_dn.getText().length() == 0 || editT_MatKhau_dn.getText().length() == 0 ){
                     Toast.makeText(context,"Vui lòng nhập số điện thoại hoặc mật khẩu",Toast.LENGTH_SHORT).show();
-                }else
-                {
+                }else if (editT_SDT_dn.getText().length() != 10){
+                    Toast.makeText(view.getContext(), "Vui lòng điền đúng định đạng số điện thoại", Toast.LENGTH_SHORT).show();
+                } else {
                     TaiKhoanDomain taikhoan = dao.DuLieuTK(editT_SDT_dn.getText().toString(),editT_MatKhau_dn.getText().toString());
                     if (taikhoan != null)
                     {

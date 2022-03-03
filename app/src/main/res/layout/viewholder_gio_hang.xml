@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardV_GioHang_gh"
     android:layout_width="match_parent"
-    android:layout_height="130dp">
+    android:layout_height="130dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,44 +25,42 @@
         <TextView
             android:id="@+id/txtV_TenSP_Gh"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="10dp"
+            android:inputType="textMultiLine"
+            android:lines="3"
             android:maxWidth="200dp"
+            android:maxLines="3"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/txtV_SLMSP_Gh"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgV_HinhSP_Gh"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtV_SLMSP_Gh"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:inputType="number"
             android:text="100"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView29"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_TenSP_Gh"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/txtV_GiaSP_Gh"
             android:layout_width="0dp"
             android:layout_height="19dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
             android:text="10.000"
             android:textAlignment="textEnd"
-            app:layout_constraintStart_toEndOf="@+id/imgV_HinhSP_Gh"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_TenSP_Gh" />
 
         <ImageButton
             android:id="@+id/imgB_XoaSPGH_Gh"
@@ -73,6 +73,46 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Đ.giá"
+            app:layout_constraintStart_toEndOf="@+id/imgV_HinhSP_Gh"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_TenSP_Gh" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="SL"
+            app:layout_constraintStart_toEndOf="@+id/txtV_GiaSP_Gh"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_TenSP_Gh" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Thành tiền"
+            app:layout_constraintStart_toEndOf="@+id/imgV_HinhSP_Gh"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/txtV_ThanhTien_gh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="10000 đ"
+            app:layout_constraintStart_toEndOf="@+id/textView30"
+            app:layout_constraintTop_toBottomOf="@+id/txtV_GiaSP_Gh" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
